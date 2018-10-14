@@ -51,6 +51,9 @@
   <ItemGroup>
     <Compile Include="ApiTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Response\SessionTest.cs" />
+    <Compile Include="Response\ButtonsTest.cs" />
+    <Compile Include="Response\ResponseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

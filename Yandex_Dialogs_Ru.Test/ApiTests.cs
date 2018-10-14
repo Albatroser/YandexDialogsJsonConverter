@@ -138,27 +138,19 @@ namespace YandexDialogsJsonConverterTest
 
             YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject()
             {
-                Response = new YandexDialogsJsonConverter.Response.Response
+                Response = new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.")
                 {
-                    Text = "Здравствуйте! Это мы, хороводоведы.",
                     Tts = "Здравствуйте! Это мы, хоров+одо в+еды.",
                     Buttons = new YandexDialogsJsonConverter.Response.Buttons[]{
                         new YandexDialogsJsonConverter.Response.Buttons
-                        {
-                            Title = "Надпись на кнопке",
-                            Payload = new object(),
-                            Hide = true,
-                            Url = "https://example.com/"
-                        }
-                    },
-                    EndSession = false
+                        ( "Надпись на кнопке", new object(),"https://example.com/", true)
+                    }
                 },
-                Session = new YandexDialogsJsonConverter.Response.Session
-                {
-                    SessionId = "2eac4854-fce721f3-b845abba-20d60",
-                    MessageId = 4,
-                    UserId = "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
-                },
+                Session = new YandexDialogsJsonConverter.Response.Session(
+                    "2eac4854-fce721f3-b845abba-20d60",
+                    4,
+                    "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+                    ),
                 version = "1.0"
             };
 
@@ -180,9 +172,8 @@ namespace YandexDialogsJsonConverterTest
 
             YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject()
             {
-                Response = new YandexDialogsJsonConverter.Response.Response
+                Response = new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.")
                 {
-                    Text = "Здравствуйте! Это мы, хороводоведы.",
                     Tts = "Здравствуйте! Это мы, хоров+одо в+еды.",
                     Card = new YandexDialogsJsonConverter.ImageCard.BigImageCard
                     {
@@ -198,21 +189,14 @@ namespace YandexDialogsJsonConverterTest
                     },
                     Buttons = new YandexDialogsJsonConverter.Response.Buttons[]{
                         new YandexDialogsJsonConverter.Response.Buttons
-                        {
-                            Title = "Надпись на кнопке",
-                            Payload = new object(),
-                            Hide = true,
-                            Url = "https://example.com/"
-                        }
-                    },
-                    EndSession = false
+                       ( "Надпись на кнопке", new object(), "https://example.com/", true)
+                    }
                 },
-                Session = new YandexDialogsJsonConverter.Response.Session
-                {
-                    SessionId = "2eac4854-fce721f3-b845abba-20d60",
-                    MessageId = 4,
-                    UserId = "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
-                },
+                Session = new YandexDialogsJsonConverter.Response.Session(
+                    "2eac4854-fce721f3-b845abba-20d60",
+                     4,
+                     "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+                ),
                 version = "1.0"
             };
 
@@ -236,9 +220,8 @@ namespace YandexDialogsJsonConverterTest
 
             YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject()
             {
-                Response = new YandexDialogsJsonConverter.Response.Response
+                Response = new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.")
                 {
-                    Text = "Здравствуйте! Это мы, хороводоведы.",
                     Tts = "Здравствуйте! Это мы, хоров+одо в+еды.",
                     Card = new YandexDialogsJsonConverter.ImageCard.ItemsCardList
                     {
@@ -260,10 +243,10 @@ namespace YandexDialogsJsonConverterTest
                                 }
                             }
                         },
-                        Footer= new YandexDialogsJsonConverter.ImageCard.CardBase.FooterCard
+                        Footer = new YandexDialogsJsonConverter.ImageCard.CardBase.FooterCard
                         {
                             Text = "Текстблокаподизображением.",
-                            Button= new YandexDialogsJsonConverter.ImageCard.CardBase.ButtonCard
+                            Button = new YandexDialogsJsonConverter.ImageCard.CardBase.ButtonCard
                             {
                                 Text = "Надпись на кнопке",
                                 Url = "https://example.com/",
@@ -273,21 +256,16 @@ namespace YandexDialogsJsonConverterTest
                     },
                     Buttons = new YandexDialogsJsonConverter.Response.Buttons[]{
                         new YandexDialogsJsonConverter.Response.Buttons
-                        {
-                            Title = "Надпись на кнопке",
-                            Payload = new object(),
-                            Hide = true,
-                            Url = "https://example.com/"
-                        }
-                    },
-                    EndSession = false
+                        ( "Надпись на кнопке", new object(), "https://example.com/", true)
+
+                    }
                 },
                 Session = new YandexDialogsJsonConverter.Response.Session
-                {
-                    SessionId = "2eac4854-fce721f3-b845abba-20d60",
-                    MessageId = 4,
-                    UserId = "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
-                },
+                (
+                    "2eac4854-fce721f3-b845abba-20d60",
+                    4,
+                    "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC"
+                ),
                 version = "1.0"
             };
 
