@@ -10,7 +10,7 @@ using YandexDialogsJsonConverter.ImageCard.CardBase;
 namespace YandexDialogsJsonConverter.ImageCard
 {
     [DataContract]
-    public class ItemsCardList : ICard
+    public struct ItemsCardList : ICard
     {
         /// <summary>
         /// Тип карточки. 
@@ -18,8 +18,8 @@ namespace YandexDialogsJsonConverter.ImageCard
         /// </summary>
         [DataMember(Name = "type")]
         [JsonProperty(Order = 0)]
-        public TypeCardEnum TypeCard { get { return TypeCardEnum.ItemsList; }  }
-       
+        public TypeCardEnum TypeCard { get { return TypeCardEnum.ItemsList; } }
+
         /// <summary>
         /// Заголовок галереи изображений.
         /// <para> Игнорируется для карточки типа BigImage.</para>
@@ -47,11 +47,11 @@ namespace YandexDialogsJsonConverter.ImageCard
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as ItemsCardList;
+                var that = (ItemsCardList)obj;
                 return
                     this.TypeCard == that.TypeCard &&
-                    this.Header == that.Header &&
-                    this.Footer == that.Footer &&
+                    this.Header.Equals(that.Header) &&
+                    this.Footer.Equals(that.Footer) &&
                     this.Items == that.Items;
             }
 

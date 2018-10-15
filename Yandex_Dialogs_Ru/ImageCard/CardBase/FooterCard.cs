@@ -9,8 +9,16 @@ using System.Threading.Tasks;
 namespace YandexDialogsJsonConverter.ImageCard.CardBase
 {
     [DataContract]
-    public class FooterCard : HeaderCard
+    public struct FooterCard 
     {
+        /// <summary>
+        /// Текст заголовка, обязателен, если передается свойство header.Максимум 64 символа.
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "text")]
+        [JsonProperty(Order = 0)]
+        public string Text { get; set; }
+
+
         /// <summary>
         /// Дополнительная кнопка для галереи изображений.
         /// <para> Игнорируется для карточки типа ItemsList.</para>
@@ -23,9 +31,9 @@ namespace YandexDialogsJsonConverter.ImageCard.CardBase
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as FooterCard;
+                var that = (FooterCard)obj;
                 return
-                    this.Button == that.Button;
+                    this.Button.Equals(that.Button);
             }
 
             return false;

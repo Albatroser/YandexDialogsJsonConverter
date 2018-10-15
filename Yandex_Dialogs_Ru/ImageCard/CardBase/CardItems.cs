@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace YandexDialogsJsonConverter.ImageCard.CardBase
 {
     [DataContract]
-    public class CardItems
+    public struct CardItems
     {
         /// <summary>
         /// Идентификатор изображения, который возвращается в ответ на запрос загрузки.
@@ -47,7 +47,7 @@ namespace YandexDialogsJsonConverter.ImageCard.CardBase
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as CardItems;
+                var that = (CardItems)obj;
                 return
                     this.Image_id == that.Image_id &&
                     this.Title == that.Title &&

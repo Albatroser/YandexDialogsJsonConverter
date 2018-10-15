@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 namespace YandexDialogsJsonConverter.ImageCard.CardBase
 {
     [DataContract]
-    public class ButtonCard
+    public struct ButtonCard
     {
         /// <summary>
         /// Текст, который будет отправлен навыку по нажатию на изображение в качестве команды пользователя.Максимум 64 символа.
@@ -34,7 +34,7 @@ namespace YandexDialogsJsonConverter.ImageCard.CardBase
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as ButtonCard;
+                var that = (ButtonCard)obj;
                 return
                     this.Text == that.Text &&
                     this.Url == that.Url &&

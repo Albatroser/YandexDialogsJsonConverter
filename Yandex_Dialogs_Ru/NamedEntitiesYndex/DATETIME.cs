@@ -4,12 +4,13 @@ using System.Linq;
 using System.Runtime.Serialization;
 using YandexDialogsJsonConverter.Infrastructure;
 using System.Text;
+using YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf;
 using System.Threading.Tasks;
 
 namespace YandexDialogsJsonConverter.NamedEntitiesYndex
 {
     [DataContract]
-    public class DATETIME : EntitieInf.Entitie
+    public struct DATETIME : IEntitie
     {
         /// <summary>
         /// Формальное описание именованной сущности.
@@ -17,11 +18,17 @@ namespace YandexDialogsJsonConverter.NamedEntitiesYndex
         [DataMember(Name = "value")]
         public StructAtom.DATETIME Value { get; set; }
 
+        /// <summary>
+        /// Обозначение начала и конца именованной сущности в массиве слов. Нумерация слов в массиве начинается с 0.
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "tokens")]
+        public Tokens Token { get; set; }
+
         public override bool Equals(Object obj)
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as DATETIME;
+                var that = (DATETIME)obj;
                 return
                     this.Token.Equals(that.Token) &&
                     this.Value.Day == that.Value.Day &&

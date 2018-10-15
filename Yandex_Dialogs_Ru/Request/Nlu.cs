@@ -20,16 +20,20 @@ namespace YandexDialogsJsonConverter.Request
         /// Массив именованных сущностей.
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "entities")]
-        public NamedEntitiesYndex.EntitieInf.Entitie[] Entities { get; set; }
+        public NamedEntitiesYndex.EntitieInf.IEntitie[] Entities { get; set; }
 
         public override bool Equals(Object obj)
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as Nlu;
+                var that = (Nlu)obj;
 
                 bool test = true;
-                if (that.Entities.Length != this.Entities.Length) test = false;
+
+                if (
+                    this.Entities == null || 
+                    that.Entities == null ||
+                    that.Entities.Length != this.Entities.Length) test = false;
 
                 int i = 0;
                 while (test && (i < Entities.Length))

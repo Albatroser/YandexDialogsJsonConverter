@@ -14,7 +14,7 @@ namespace YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf
 
         public override bool CanConvert(Type objectType)
         {
-            return (objectType == typeof(Entitie));
+            return (objectType == typeof(IEntitie));
         }
 
         public override object ReadJson(JsonReader reader, Type objectType, object existingValue, JsonSerializer serializer)

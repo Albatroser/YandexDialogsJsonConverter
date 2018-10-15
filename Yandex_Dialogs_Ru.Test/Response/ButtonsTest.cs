@@ -60,26 +60,5 @@ namespace YandexDialogsJsonConverterTest.Response
             Assert.AreEqual(Payload, Buttons.Payload);
             Assert.AreEqual(Hide, Buttons.Hide);
         }
-        [TestMethod]
-        public void СreateButtonsClassOldFor()
-        {
-            // Arrang
-            string Title = "Надпись на кнопке";
-            object Payload = new object();
-            bool Hide = true;
-            string Url = "https://example.com/";
-            // Act
-            for (int i = 0; i < 1000000000; i++)
-            {
-                ButtonsClassOld Buttons1 = new ButtonsClassOld { Title = Title, Url = Url, Payload = Payload, Hide = Hide };
-            }
-            ButtonsClassOld Buttons = new ButtonsClassOld { Title = Title, Url = Url, Payload = Payload, Hide = Hide };
-
-            // Assert
-            Assert.AreEqual(Title, Buttons.Title);
-            Assert.AreEqual(Url, Buttons.Url);
-            Assert.AreEqual(Payload, Buttons.Payload);
-            Assert.AreEqual(Hide, Buttons.Hide);
-        }
     }
 }

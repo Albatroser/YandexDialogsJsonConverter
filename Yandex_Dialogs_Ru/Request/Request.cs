@@ -11,7 +11,7 @@ namespace YandexDialogsJsonConverter.Request
     /// Данные, полученные от пользователя.
     /// </summary>
     [DataContract]
-    public class RequestObject
+    public struct RequestObject
     {
         /// <summary>
         /// Запрос, который был передан вместе с командой активации навыка.
@@ -56,7 +56,7 @@ namespace YandexDialogsJsonConverter.Request
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as RequestObject;
+                var that = (RequestObject)obj;
                 return
                     this.Command == that.Command &&
                     this.OriginalUtterance == that.OriginalUtterance &&

@@ -9,7 +9,7 @@ using YandexDialogsJsonConverter.Infrastructure;
 namespace YandexDialogsJsonConverter.Request
 {
     [DataContract]
-    public class Request : HttpObject
+    public struct Request : IHttpObject
     {
         /// <summary>
         /// Информация об устройстве, с помощью которого пользователь разговаривает с Алисой.
@@ -29,14 +29,20 @@ namespace YandexDialogsJsonConverter.Request
         [DataMember(EmitDefaultValue = false, Name = "session")]
         public Session Session { get; set; }
 
+        /// <summary>
+        /// Версия протокола. Текущая версия — 1.0.
+        /// </summary>
+        [DataMember(EmitDefaultValue = false, Name = "version")]
+        public string Version { get; set; }
+
         public override bool Equals(Object obj)
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as Request;
+                var that = (Request)obj ;
                 return
                     this.Session.Equals(that.Session) &&
-                    this.version == that.version &&
+                    this.Version == that.Version &&
                     this.Meta.Equals(that.Meta) &&
                     this.RequestObject.Equals(that.RequestObject);
             }

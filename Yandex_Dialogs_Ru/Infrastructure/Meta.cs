@@ -11,7 +11,7 @@ namespace YandexDialogsJsonConverter.Infrastructure
     /// Информация об устройстве, с помощью которого пользователь разговаривает с Алисой.
     /// </summary>
     [DataContract]
-    public class Meta
+    public struct Meta
     {
         /// <summary>
         /// Язык в POSIX-формате, максимум 64 символа.
@@ -35,7 +35,7 @@ namespace YandexDialogsJsonConverter.Infrastructure
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as Meta;
+                var that = (Meta)obj ;
                 return 
                     this.Locale == that.Locale && 
                     this.Timezone == that.Timezone && 

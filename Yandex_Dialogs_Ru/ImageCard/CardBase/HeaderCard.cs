@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace YandexDialogsJsonConverter.ImageCard.CardBase
 {
     [DataContract]
-    public class HeaderCard
+    public struct HeaderCard
     {
         /// <summary>
         /// Текст заголовка, обязателен, если передается свойство header.Максимум 64 символа.
@@ -22,7 +22,7 @@ namespace YandexDialogsJsonConverter.ImageCard.CardBase
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as HeaderCard;
+                var that = (HeaderCard)obj ;
                 return
                     this.Text == that.Text ;
             }

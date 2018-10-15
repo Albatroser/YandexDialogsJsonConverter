@@ -13,7 +13,7 @@ namespace YandexDialogsJsonConverter.Request
     /// Формальные характеристики реплики, которые удалось выделить Яндекс.Диалогам. Отсутствует, если ни одно из вложенных свойств не применимо.
     /// </summary>
     [DataContract]
-    public class  Markup 
+    public struct  Markup 
     {
         /// <summary>
         /// Признак реплики, которая содержит криминальный подтекст (самоубийство, разжигание ненависти, угрозы). Вы можете настроить навык на определенную реакцию для таких случаев — например, отвечать «Не понимаю, о чем вы. Пожалуйста, переформулируйте вопрос.»
@@ -26,7 +26,7 @@ namespace YandexDialogsJsonConverter.Request
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as Markup;
+                var that = (Markup)obj;
                 return
                     this.DangerousContext == that.DangerousContext ;
             }

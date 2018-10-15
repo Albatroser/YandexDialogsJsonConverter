@@ -11,7 +11,7 @@ namespace YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf
     /// Обозначение начала и конца именованной сущности в массиве слов. Нумерация слов в массиве начинается с 0.
     /// </summary>
     [DataContract]
-    public class Tokens
+    public struct Tokens
     {
         /// <summary>
         /// Первое слово именованной сущности.
@@ -29,7 +29,7 @@ namespace YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = obj as Tokens;
+                var that = (Tokens)obj;
                 return
                     this.Start == that.Start &&
                     this.End == that.End;

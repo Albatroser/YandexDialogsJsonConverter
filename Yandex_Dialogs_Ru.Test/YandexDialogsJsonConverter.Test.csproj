@@ -54,6 +54,7 @@
     <Compile Include="Response\SessionTest.cs" />
     <Compile Include="Response\ButtonsTest.cs" />
     <Compile Include="Response\ResponseTest.cs" />
+    <Compile Include="Response\ResponseObjectTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
