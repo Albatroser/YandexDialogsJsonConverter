@@ -6,9 +6,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf
+namespace YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf
 {
-
     class EntitieJsonConvert : JsonConverter
     {
 

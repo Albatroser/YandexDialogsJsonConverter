@@ -5,9 +5,9 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
-using YandexDialogsJsonConverter.ImageCard.CardBase;
+using YandexDialogsJsonConverter.Response.ImageCard.CardBase;
 
-namespace YandexDialogsJsonConverter.ImageCard
+namespace YandexDialogsJsonConverter.Response.ImageCard
 {
     [DataContract]
     public struct ItemsCardList : ICard

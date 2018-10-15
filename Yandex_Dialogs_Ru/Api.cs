@@ -17,7 +17,7 @@ namespace YandexDialogsJsonConverter
         public Request.Request GetRequest(string value)
         {
             return Newtonsoft.Json.JsonConvert.DeserializeObject<Request.Request>(value,
-               new JsonSerializerSettings() { Converters = { new NamedEntitiesYndex.EntitieInf.EntitieJsonConvert() } });
+               new JsonSerializerSettings() { Converters = { new Request.NamedEntitiesYndex.EntitieInf.EntitieJsonConvert() } });
         }
 
         /// <summary>

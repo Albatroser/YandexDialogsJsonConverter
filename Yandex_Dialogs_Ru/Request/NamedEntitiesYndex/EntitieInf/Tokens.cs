@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf
+namespace YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf
 {
     /// <summary>
     /// Обозначение начала и конца именованной сущности в массиве слов. Нумерация слов в массиве начинается с 0.

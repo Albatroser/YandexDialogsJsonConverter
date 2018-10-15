@@ -4,10 +4,10 @@ using System.Linq;
 using System.Runtime.Serialization;
 using YandexDialogsJsonConverter.Infrastructure;
 using System.Text;
-using YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf;
+using YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf;
 using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.NamedEntitiesYndex
+namespace YandexDialogsJsonConverter.Request.NamedEntitiesYndex
 {
     [DataContract]
     public struct DATETIME : IEntitie

@@ -46,21 +46,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Api.cs" />
-    <Compile Include="ImageCard\BigImageCard.cs" />
-    <Compile Include="ImageCard\ItemsCardList.cs" />
-    <Compile Include="ImageCard\CardBase\ButtonCard.cs" />
-    <Compile Include="ImageCard\CardBase\ICard.cs" />
-    <Compile Include="ImageCard\CardBase\CardItems.cs" />
-    <Compile Include="NamedEntitiesYndex\EntitieInf\EntitieJsonConvert.cs" />
-    <Compile Include="NamedEntitiesYndex\EntitieInf\Tokens.cs" />
-    <Compile Include="NamedEntitiesYndex\DATETIME.cs" />
-    <Compile Include="NamedEntitiesYndex\FIO.cs" />
-    <Compile Include="ImageCard\CardBase\FooterCard.cs" />
-    <Compile Include="NamedEntitiesYndex\Geo.cs" />
-    <Compile Include="ImageCard\CardBase\HeaderCard.cs" />
+    <Compile Include="Response\ImageCard\BigImageCard.cs" />
+    <Compile Include="Response\ImageCard\ItemsCardList.cs" />
+    <Compile Include="Response\ImageCard\CardBase\ButtonCard.cs" />
+    <Compile Include="Response\ImageCard\CardBase\ICard.cs" />
+    <Compile Include="Response\ImageCard\CardBase\CardItems.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\EntitieInf\EntitieJsonConvert.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\EntitieInf\Tokens.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\DATETIME.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\FIO.cs" />
+    <Compile Include="Response\ImageCard\CardBase\FooterCard.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\Geo.cs" />
+    <Compile Include="Response\ImageCard\CardBase\HeaderCard.cs" />
     <Compile Include="Infrastructure\HttpObject.cs" />
-    <Compile Include="NamedEntitiesYndex\NUMBER.cs" />
-    <Compile Include="NamedEntitiesYndex\EntitieInf\Entities.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\NUMBER.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\EntitieInf\Entities.cs" />
     <Compile Include="Infrastructure\JsonConvert.cs" />
     <Compile Include="Response\Buttons.cs" />
     <Compile Include="Request\Markup.cs" />
@@ -71,13 +71,13 @@
     <Compile Include="Response\Response.cs" />
     <Compile Include="Response\ResponseObject .cs" />
     <Compile Include="Response\Session.cs" />
-    <Compile Include="ImageCard\CardBase\TypeCardEnum.cs" />
+    <Compile Include="Response\ImageCard\CardBase\TypeCardEnum.cs" />
     <Compile Include="Request\TypeRequestEnum.cs" />
     <Compile Include="Request\RequestObject.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="NamedEntitiesYndex\StructAtom\DATETIME.cs" />
-    <Compile Include="NamedEntitiesYndex\StructAtom\FIO.cs" />
-    <Compile Include="NamedEntitiesYndex\StructAtom\GEO.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\StructAtom\DATETIME.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\StructAtom\FIO.cs" />
+    <Compile Include="Request\NamedEntitiesYndex\StructAtom\GEO.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

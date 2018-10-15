@@ -5,7 +5,7 @@ using System.Runtime.Serialization;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.ImageCard.CardBase
+namespace YandexDialogsJsonConverter.Response.ImageCard.CardBase
 {
     public interface ICard
     {

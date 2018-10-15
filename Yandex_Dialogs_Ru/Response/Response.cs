@@ -1,5 +1,5 @@
 ﻿using System.Runtime.Serialization;
-using YandexDialogsJsonConverter.ImageCard.CardBase;
+using YandexDialogsJsonConverter.Response.ImageCard.CardBase;
 using YandexDialogsJsonConverter.Request;
 
 namespace YandexDialogsJsonConverter.Response

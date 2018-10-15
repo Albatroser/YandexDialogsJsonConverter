@@ -2,21 +2,21 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.Serialization;
-using System.Text;
-using System.Threading.Tasks;
 using YandexDialogsJsonConverter.Infrastructure;
-using YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf;
+using System.Text;
+using YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf;
+using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.NamedEntitiesYndex
+namespace YandexDialogsJsonConverter.Request.NamedEntitiesYndex
 {
     [DataContract]
-    public struct NUMBER : IEntitie
+    public struct FIO : IEntitie
     {
         /// <summary>
         /// Формальное описание именованной сущности.
         /// </summary>
         [DataMember(Name = "value")]
-        public float Value { get; set; }
+        public StructAtom.FIO Value { get; set; }
 
         /// <summary>
         /// Обозначение начала и конца именованной сущности в массиве слов. Нумерация слов в массиве начинается с 0.
@@ -28,10 +28,12 @@ namespace YandexDialogsJsonConverter.NamedEntitiesYndex
         {
             if (obj != null && GetType() == obj.GetType())
             {
-                var that = (NUMBER)obj;
+                var that = (FIO)obj;
                 return
-                   this.Token.Equals(that.Token) &&
-                    this.Value == that.Value;
+                     this.Token.Equals(that.Token) &&
+                    this.Value.First_name == that.Value.First_name &&
+                    this.Value.Last_name == that.Value.Last_name &&
+                    this.Value.Patronymic_name == that.Value.Patronymic_name;
             }
 
             return false;

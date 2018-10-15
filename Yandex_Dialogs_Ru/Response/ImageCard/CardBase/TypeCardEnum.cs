@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace YandexDialogsJsonConverter.ImageCard.CardBase
+namespace YandexDialogsJsonConverter.Response.ImageCard.CardBase
 {
     /// <summary>
     /// Тип карточки. 

@@ -45,51 +45,51 @@ namespace YandexDialogsJsonConverterTest
                         "на",
                         "завтра",
                     },
-                    Entities = new YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf.IEntitie[]
+                    Entities = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.IEntitie[]
                     {
-                        new YandexDialogsJsonConverter.NamedEntitiesYndex.GEO
+                        new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.GEO
                         {
-                            Token = new YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf.Tokens
+                            Token = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens
                             {
                                 End =6,
                                 Start =2
                             },
-                            Value = new YandexDialogsJsonConverter.NamedEntitiesYndex.StructAtom.GEO{
+                            Value = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.GEO{
                                 House_number ="16",
                                 Street = "льва толстого"
                             }
                         },
-                        new YandexDialogsJsonConverter.NamedEntitiesYndex.FIO
+                        new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.FIO
                         {
-                            Token = new YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf.Tokens
+                            Token = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens
                             {
                                 End =5,
                                 Start =3
                             },
-                            Value = new YandexDialogsJsonConverter.NamedEntitiesYndex.StructAtom.FIO
+                            Value = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.FIO
                             {
                                 First_name = "лев",
                                 Last_name = "толстой"
                             }
 
                         },
-                        new YandexDialogsJsonConverter.NamedEntitiesYndex.NUMBER
+                        new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.NUMBER
                         {
-                            Token = new YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf.Tokens
+                            Token = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens
                             {
                                 End =6,
                                 Start =5
                             },
                             Value = 16
                         },
-                        new YandexDialogsJsonConverter.NamedEntitiesYndex.DATETIME
+                        new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.DATETIME
                         {
-                            Token = new YandexDialogsJsonConverter.NamedEntitiesYndex.EntitieInf.Tokens
+                            Token = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens
                             {
                                 End =8,
                                 Start =6
                             },
-                            Value = new YandexDialogsJsonConverter.NamedEntitiesYndex.StructAtom.DATETIME
+                            Value = new YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.DATETIME
                             {
                                 Day=1,
                                 Day_is_relative = true
@@ -164,10 +164,10 @@ namespace YandexDialogsJsonConverterTest
             YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject(
                 new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.", false,
                 "Здравствуйте! Это мы, хоров+одо в+еды.",
-                new YandexDialogsJsonConverter.ImageCard.BigImageCard
+                new YandexDialogsJsonConverter.Response.ImageCard.BigImageCard
                 (
                     "1027858/46r960da47f60207e924",
-                    new YandexDialogsJsonConverter.ImageCard.CardBase.ButtonCard
+                    new YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard
                     ("Надпись на кнопке", "http://example.com/", new object()),
                     "Заголовок для изображения",
                       "Описание изображения."),
@@ -201,22 +201,22 @@ namespace YandexDialogsJsonConverterTest
                 new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.", false,
 
                      "Здравствуйте! Это мы, хоров+одо в+еды.",
-                     new YandexDialogsJsonConverter.ImageCard.ItemsCardList
+                     new YandexDialogsJsonConverter.Response.ImageCard.ItemsCardList
                     (
-                         new YandexDialogsJsonConverter.ImageCard.CardBase.HeaderCard("Заголовок галереи изображений"),
-                         new YandexDialogsJsonConverter.ImageCard.CardBase.CardItems[]
+                         new YandexDialogsJsonConverter.Response.ImageCard.CardBase.HeaderCard("Заголовок галереи изображений"),
+                         new YandexDialogsJsonConverter.Response.ImageCard.CardBase.CardItems[]
                          {
-                             new YandexDialogsJsonConverter.ImageCard.CardBase.CardItems
+                             new YandexDialogsJsonConverter.Response.ImageCard.CardBase.CardItems
                              (
                                  "<image_id>",
-                                 new YandexDialogsJsonConverter.ImageCard.CardBase.ButtonCard
+                                 new YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard
                                 ( "Надпись на кнопке", "http://example.com/", new object()),
                                 "Заголовок для изображения", "Описание изображения.")
 
                          },
-                         new YandexDialogsJsonConverter.ImageCard.CardBase.FooterCard
+                         new YandexDialogsJsonConverter.Response.ImageCard.CardBase.FooterCard
                          ("Текстблокаподизображением.",
-                             new YandexDialogsJsonConverter.ImageCard.CardBase.ButtonCard
+                             new YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard
                              ("Надпись на кнопке", "https://example.com/", new object()))
                          ),
                      new YandexDialogsJsonConverter.Response.Buttons[]{
