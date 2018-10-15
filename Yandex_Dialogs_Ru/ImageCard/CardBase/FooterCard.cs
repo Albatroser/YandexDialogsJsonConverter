@@ -9,23 +9,35 @@ using System.Threading.Tasks;
 namespace YandexDialogsJsonConverter.ImageCard.CardBase
 {
     [DataContract]
-    public struct FooterCard 
+    public struct FooterCard
     {
+        string text;
+        ButtonCard button;
+        /// <summary>
+        /// Кнопки под галереей изображений.
+        /// </summary>
+        /// <param name="TextSet">Текст заголовка, обязателен, если передается свойство header.Максимум 64 символа.</param>
+        public FooterCard(string TextSet, ButtonCard ButtonSet)
+        {
+            text = TextSet;
+            button = ButtonSet;
+        }
+
+
         /// <summary>
         /// Текст заголовка, обязателен, если передается свойство header.Максимум 64 символа.
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "text")]
         [JsonProperty(Order = 0)]
-        public string Text { get; set; }
+        public string Text { get { return text; } }
 
 
         /// <summary>
         /// Дополнительная кнопка для галереи изображений.
-        /// <para> Игнорируется для карточки типа ItemsList.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "button")]
         [JsonProperty(Order = 1)]
-        public ButtonCard Button { get; set; }
+        public ButtonCard Button { get { return button; } }
 
         public override bool Equals(Object obj)
         {

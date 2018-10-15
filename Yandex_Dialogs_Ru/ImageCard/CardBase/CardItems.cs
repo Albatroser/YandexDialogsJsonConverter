@@ -11,37 +11,48 @@ namespace YandexDialogsJsonConverter.ImageCard.CardBase
     [DataContract]
     public struct CardItems
     {
+        string imageId, title, description;
+        ButtonCard button;
+        /// <summary>
+        /// Изображения для галереи
+        /// </summary>
+        /// <param name="ImageIdSet">  Идентификатор изображения, который возвращается в ответ на запрос загрузки.
+        /// <para> Необходимо указывать </para></param>
+        /// <param name="ButtonSet"> Свойства изображения, на которое можно нажать.  </param>
+        /// <param name="TitleSet">Заголовок для изображения.</param>
+        /// <param name="DescriptionSet">Описание изображения.</param>
+        public CardItems(string ImageIdSet, ButtonCard ButtonSet, string TitleSet = null, string DescriptionSet = null)
+        {
+            imageId = ImageIdSet;
+            title = TitleSet;
+            description = DescriptionSet;
+            button = ButtonSet;
+        }
+
+
         /// <summary>
         /// Идентификатор изображения, который возвращается в ответ на запрос загрузки.
-        /// <para> Необходимо указывать для карточки типа BigImage, для типа ItemsList игнорируется.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "image_id")]
-        [JsonProperty(Order = 1)]
-        public string Image_id { get; set; }
+        public string Image_id { get { return imageId; } }
 
         /// <summary>
         /// Заголовок для изображения.
-        /// <para>Игнорируется для карточки типа ItemsList.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "title")]
-        [JsonProperty(Order = 2)]
-        public string Title { get; set; }
+        public string Title { get { return title; } }
 
         /// <summary>
         ///  Описание изображения.
-        /// <para> Игнорируется для карточки типа ItemsList.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "description")]
-        [JsonProperty(Order = 3)]
-        public string Description { get; set; }
+        public string Description { get { return description; } }
 
         /// <summary>
         /// Свойства изображения, на которое можно нажать.
-        /// <para> Игнорируется для карточки типа ItemsList.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "button")]
-        [JsonProperty(Order = 4)]
-        public ButtonCard Button { get; set; }
+        public ButtonCard Button { get { return button; } }
 
         public override bool Equals(Object obj)
         {

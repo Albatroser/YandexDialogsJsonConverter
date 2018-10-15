@@ -16,37 +16,20 @@ namespace YandexDialogsJsonConverter.Response
         Buttons[] buttons;
 
         /// <summary>
-        /// Данные для ответа пользователю.
+        /// Данные для ответа пользователю. 
         /// </summary>
         /// <param name="TextSet">Текст, который следует показать и сказать пользователю. Максимум 1024 символа.</param>
+        /// <param name="TtsSet">Ответ в формате TTS (text-to-speech), максимум 1024 символа.</param>
+        /// <param name="CardSet">Описание карточки — сообщения с поддержкой изображений.
+        /// <para>Если приложению удается отобразить карточку для пользователя, свойство response.text не используется.</para></param>
+        /// <param name="ButtonsSet"> Кнопки, которые следует показать пользователю.
+        /// <para> Все указанные кнопки выводятся после основного ответа Алисы, описанного в свойствах response.text и response.card.Кнопки можно использовать как релевантные ответу ссылки или подсказки для продолжения разговора. </para></param>
         /// <param name="EndSessionSet">Признак конца разговора.
         /// <para>Допустимые значения:</para>
         /// <para>false — сессию следует продолжить;</para>
-        /// <para>true — сессию следует завершить.</para></param>
-        public Response(string TextSet, string TtsSet = null, ICard CardSet = null, Buttons[] ButtonsSet = null, bool EndSessionSet = false)
-        {
-            if (TextSet != null && TextSet != "")
-            {
-                if (TextSet.Length >= 1024) { text = TextSet.Remove(1024); }
-                else { text = TextSet; }
-            }
-            else
-            { text = "Что-то пошло не так."; }
-            endSession = EndSessionSet;
-            tts = TtsSet;
-            card = CardSet;
-            buttons = ButtonsSet;
-        }
-        /// <summary>
-        /// Данные для ответа пользователю. При NoControl=true производительность возрастает в 2 раза
-        /// </summary>
-        /// <param name="TextSet">Текст, который следует показать и сказать пользователю. Максимум 1024 символа.</param>
-        /// <param name="EndSessionSet">Признак конца разговора.
-        /// <para>Допустимые значения:</para>
-        /// <para>false — сессию следует продолжить;</para>
-        /// <para>true — сессию следует завершить.</para></param>
-        /// <param name="NoControl">Задав данное значение true – отключаем контроль вводимых данных</param>
-        public Response(string TextSet, bool NoControl, string TtsSet = null, ICard CardSet = null, Buttons[] ButtonsSet = null, bool EndSessionSet = false)
+        /// <para>true — сессию следует завершить.</para>
+        /// </param>
+        public Response(string TextSet, bool EndSessionSet = false, string TtsSet = null, ICard CardSet = null, Buttons[] ButtonsSet = null)
         {
             text = TextSet;
             endSession = EndSessionSet;

@@ -12,6 +12,27 @@ namespace YandexDialogsJsonConverter.ImageCard
     [DataContract]
     public struct ItemsCardList : ICard
     {
+        HeaderCard header; CardItems[] items; FooterCard footer;
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="HeaderSet">
+        /// Заголовок галереи изображений.
+        /// </param>
+        /// <param name="ItemsSet">
+        /// Набор изображений для галереи — не меньше 1, не больше 5.
+        /// </param>
+        /// <param name="FooterSet">
+        /// Кнопки под галереей изображений.
+        /// </param>
+        public ItemsCardList(HeaderCard HeaderSet, CardItems[] ItemsSet, FooterCard FooterSet)
+        {
+            header = HeaderSet;
+            items = ItemsSet;
+            footer = FooterSet;
+        }
+
+
         /// <summary>
         /// Тип карточки. 
         /// <para>Требуемый формат ответа зависит от типа карточки.</para>
@@ -22,26 +43,24 @@ namespace YandexDialogsJsonConverter.ImageCard
 
         /// <summary>
         /// Заголовок галереи изображений.
-        /// <para> Игнорируется для карточки типа BigImage.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "header")]
         [JsonProperty(Order = 1)]
-        public HeaderCard Header { get; set; }
+        public HeaderCard Header { get { return header; } }
 
         /// <summary>
         /// Набор изображений для галереи — не меньше 1, не больше 5.
-        /// <para>Игнорируется для карточки типа BigImage.</para>
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "items")]
         [JsonProperty(Order = 2)]
-        public CardItems[] Items { get; set; }
+        public CardItems[] Items { get { return items; } }
 
         /// <summary>
         /// Кнопки под галереей изображений.
         /// </summary>
         [DataMember(EmitDefaultValue = false, Name = "footer")]
         [JsonProperty(Order = 3)]
-        public FooterCard Footer { get; set; }
+        public FooterCard Footer { get { return footer; } }
 
         public override bool Equals(Object obj)
         {
