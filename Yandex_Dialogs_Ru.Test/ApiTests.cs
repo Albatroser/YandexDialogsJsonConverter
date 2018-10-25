@@ -1,5 +1,6 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
+using YandexDialogsJsonConverter.Response.Сheck;
 
 namespace YandexDialogsJsonConverterTest
 {
@@ -114,7 +115,6 @@ namespace YandexDialogsJsonConverterTest
             Assert.AreEqual(requestExpected, requestObject);
         }
 
-
         [TestMethod]
         public void GetRequest_string2()
         {
@@ -136,8 +136,8 @@ namespace YandexDialogsJsonConverterTest
             YandexDialogsJsonConverter.Api api = new YandexDialogsJsonConverter.Api();
             string jsonExpected = "{\"response\": {\"text\": \"Здравствуйте! Это мы, хороводоведы.\",\"tts\": \"Здравствуйте! Это мы, хоров+одо в+еды.\", \"buttons\": [ { \"title\": \"Надпись на кнопке\", \"payload\": {}, \"url\": \"https://example.com/\", \"hide\": true } ], \"end_session\": false  }, \"session\": { \"session_id\": \"2eac4854-fce721f3-b845abba-20d60\", \"message_id\": 4, \"user_id\": \"AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC\"  },  \"version\": \"1.0\"}";
 
-            YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject(
-                new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.", false,
+            YandexDialogsJsonConverter.Response.Response value = new YandexDialogsJsonConverter.Response.Response(
+                new YandexDialogsJsonConverter.Response.ResponseObject("Здравствуйте! Это мы, хороводоведы.", false,
                 "Здравствуйте! Это мы, хоров+одо в+еды.", null, new YandexDialogsJsonConverter.Response.Buttons[]{
                         new YandexDialogsJsonConverter.Response.Buttons ( "Надпись на кнопке", new object(),"https://example.com/", true)
                 }),
@@ -161,8 +161,8 @@ namespace YandexDialogsJsonConverterTest
             YandexDialogsJsonConverter.Api api = new YandexDialogsJsonConverter.Api();
             string jsonExpected = " { \"response\": { \"text\": \"Здравствуйте! Это мы, хороводоведы.\", \"tts\": \"Здравствуйте! Это мы, хоров+одо в+еды.\", \"card\": { \"type\": \"BigImage\", \"image_id\": \"1027858/46r960da47f60207e924\", \"title\": \"Заголовок для изображения\", \"description\": \"Описание изображения.\", \"button\": { \"text\": \"Надпись на кнопке\", \"url\": \"http://example.com/\", \"payload\": { } } }, \"buttons\": [ { \"title\": \"Надпись на кнопке\", \"payload\": {}, \"url\": \"https://example.com/\", \"hide\": true } ], \"end_session\": false  },  \"session\": { \"session_id\": \"2eac4854 - fce721f3 - b845abba - 20d60\", \"message_id\": 4, \"user_id\": \"AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC\" }, \"version\": \"1.0\"}";
 
-            YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject(
-                new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.", false,
+            YandexDialogsJsonConverter.Response.Response value = new YandexDialogsJsonConverter.Response.Response(
+                new YandexDialogsJsonConverter.Response.ResponseObject("Здравствуйте! Это мы, хороводоведы.", false,
                 "Здравствуйте! Это мы, хоров+одо в+еды.",
                 new YandexDialogsJsonConverter.Response.ImageCard.BigImageCard
                 (
@@ -197,8 +197,8 @@ namespace YandexDialogsJsonConverterTest
 
 
 
-            YandexDialogsJsonConverter.Response.ResponseObject value = new YandexDialogsJsonConverter.Response.ResponseObject(
-                new YandexDialogsJsonConverter.Response.Response("Здравствуйте! Это мы, хороводоведы.", false,
+            YandexDialogsJsonConverter.Response.Response value = new YandexDialogsJsonConverter.Response.Response(
+                new YandexDialogsJsonConverter.Response.ResponseObject("Здравствуйте! Это мы, хороводоведы.", false,
 
                      "Здравствуйте! Это мы, хоров+одо в+еды.",
                      new YandexDialogsJsonConverter.Response.ImageCard.ItemsCardList
@@ -235,5 +235,67 @@ namespace YandexDialogsJsonConverterTest
             // Assert
             Assert.AreEqual(jsonExpected1, json1, true);
         }
+
+        [TestMethod]
+        public void SetResponseCheck_string_1()
+        {
+            // Arrang
+            YandexDialogsJsonConverter.Api api = new YandexDialogsJsonConverter.Api();
+            string jsonExpected = "{\"response\": {\"text\": \"Здравствуйте! Это мы, хороводоведы.\",\"tts\": \"Здравствуйте! Это мы, хоров+одо в+еды.\", \"buttons\": [ { \"title\": \"Надпись на кнопке\", \"payload\": {}, \"url\": \"https://example.com/\", \"hide\": true } ], \"end_session\": false  }, \"session\": { \"session_id\": \"2eac4854-fce721f3-b845abba-20d60\", \"message_id\": 4, \"user_id\": \"AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC\"  },  \"version\": \"1.0\"}";
+
+            YandexDialogsJsonConverter.Response.Response value = new YandexDialogsJsonConverter.Response.Response(
+                new YandexDialogsJsonConverter.Response.ResponseObject("Здравствуйте! Это мы, хороводоведы.", false,
+                "Здравствуйте! Это мы, хоров+одо в+еды.", null, new YandexDialogsJsonConverter.Response.Buttons[]{
+                        new YandexDialogsJsonConverter.Response.Buttons ( "Надпись на кнопке", new object(),"https://example.com/", true)
+                }),
+                new YandexDialogsJsonConverter.Response.Session
+                ("2eac4854-fce721f3-b845abba-20d60", 4, "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC")
+            );
+
+            Error[] error;
+            // Act
+            string json = api.SetResponseCheck(value, out error);
+            string json1 = json.Replace(" ", "");
+            string jsonExpected1 = jsonExpected.Replace(" ", "");
+            bool s = json1 == jsonExpected1;
+            // Assert
+            Assert.AreEqual(jsonExpected1, json1, true);
+            Assert.AreEqual(0, error.Length);
+        }
+
+        [TestMethod]
+        public void SetResponseCheck_string_2()
+        {
+            // Arrang
+            string excectedText1 = "MessageId максимум 8 символов. Факт 9 знаков: 123456789";
+            string excectedText2 = "YandexDialogsJsonConverter.Response.Session.MessageId";
+
+
+
+            YandexDialogsJsonConverter.Api api = new YandexDialogsJsonConverter.Api();
+            string jsonExpected = "{\"response\": {\"text\": \"Здравствуйте! Это мы, хороводоведы.\",\"tts\": \"Здравствуйте! Это мы, хоров+одо в+еды.\", \"buttons\": [ { \"title\": \"Надпись на кнопке\", \"payload\": {}, \"url\": \"https://example.com/\", \"hide\": true } ], \"end_session\": false  }, \"session\": { \"session_id\": \"2eac4854-fce721f3-b845abba-20d60\", \"message_id\": 4, \"user_id\": \"AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC\"  },  \"version\": \"1.0\"}";
+
+            YandexDialogsJsonConverter.Response.Response value = new YandexDialogsJsonConverter.Response.Response(
+                new YandexDialogsJsonConverter.Response.ResponseObject("Здравствуйте! Это мы, хороводоведы.", false,
+                "Здравствуйте! Это мы, хоров+одо в+еды.", null, new YandexDialogsJsonConverter.Response.Buttons[]{
+                        new YandexDialogsJsonConverter.Response.Buttons ( "Надпись на кнопке", new object(),"https://example.com/", true)
+                }),
+                new YandexDialogsJsonConverter.Response.Session
+                ("2eac4854-fce721f3-b845abba-20d60", 123456789, "AC9WC3DF6FCE052E45A4566A48E6B7193774B84814CE49A922E163B8B29881DC")
+            );
+
+            Error[] error;
+            // Act
+            string json = api.SetResponseCheck(value, out error);
+            string jsonExpected1 = jsonExpected.Replace(" ", "");
+
+            var v = error[0];
+            // Assert
+            Assert.IsNull(json);
+            Assert.AreEqual(excectedText1, v.ErrorText);
+            Assert.AreEqual(excectedText2, v.OdjName);
+        }
+
+  
     }
 }

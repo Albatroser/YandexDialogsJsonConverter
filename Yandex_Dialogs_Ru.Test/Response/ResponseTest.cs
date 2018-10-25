@@ -12,8 +12,8 @@ namespace YandexDialogsJsonConverterTest.Response
             // Arrang
             string Text = "2eac4854-fce721f3-b845abba-20d60";
             // Act
-            YandexDialogsJsonConverter.Response.Response Response = new
-                YandexDialogsJsonConverter.Response.Response(Text);
+            YandexDialogsJsonConverter.Response.ResponseObject Response = new
+                YandexDialogsJsonConverter.Response.ResponseObject(Text);
             // Assert
             Assert.AreEqual(Text, Response.Text);
             Assert.AreEqual(false, Response.EndSession);
@@ -24,26 +24,13 @@ namespace YandexDialogsJsonConverterTest.Response
             // Arrang
             string Text = "2eac4854-fce721f3-b845abba-20d60";
             // Act
-            YandexDialogsJsonConverter.Response.Response Response = new
-                YandexDialogsJsonConverter.Response.Response(Text, true);
+            YandexDialogsJsonConverter.Response.ResponseObject Response = new
+                YandexDialogsJsonConverter.Response.ResponseObject(Text, true);
             // Assert
             Assert.AreEqual(Text, Response.Text);
             Assert.AreEqual(true, Response.EndSession);
         }
        
-        [TestMethod]
-        public void СreateResponseFor()
-        {
-            // Arrang
-            string Text = "2eac4854-fce721f3-b845abba-20d60";
-            // Act
-            YandexDialogsJsonConverter.Response.Response Response = new
-                YandexDialogsJsonConverter.Response.Response(Text);
-            for (int i = 0; i < 1000000000; i++)
-            { Response = new YandexDialogsJsonConverter.Response.Response(Text); }
-            // Assert
-            Assert.AreEqual(Text, Response.Text);
-            Assert.AreEqual(false, Response.EndSession);
-        }
+        
     }
 }

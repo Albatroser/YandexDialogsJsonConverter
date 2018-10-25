@@ -68,8 +68,8 @@
     <Compile Include="Request\Nlu.cs" />
     <Compile Include="Request\Request.cs" />
     <Compile Include="Request\Session.cs" />
+    <Compile Include="Response\ResponseObject.cs" />
     <Compile Include="Response\Response.cs" />
-    <Compile Include="Response\ResponseObject .cs" />
     <Compile Include="Response\Session.cs" />
     <Compile Include="Response\ImageCard\CardBase\TypeCardEnum.cs" />
     <Compile Include="Request\TypeRequestEnum.cs" />
@@ -78,8 +78,20 @@
     <Compile Include="Request\NamedEntitiesYndex\StructAtom\DATETIME.cs" />
     <Compile Include="Request\NamedEntitiesYndex\StructAtom\FIO.cs" />
     <Compile Include="Request\NamedEntitiesYndex\StructAtom\GEO.cs" />
+    <Compile Include="Response\Сheck\BigImageCard.cs" />
+    <Compile Include="Response\Сheck\Button.cs" />
+    <Compile Include="Response\Сheck\ButtonCard.cs" />
+    <Compile Include="Response\Сheck\CardItems.cs" />
+    <Compile Include="Response\Сheck\HeaderCard.cs" />
+    <Compile Include="Response\Сheck\FooterCard.cs" />
+    <Compile Include="Response\Сheck\ItemsCardList.cs" />
+    <Compile Include="Response\Сheck\Session.cs" />
+    <Compile Include="Response\Сheck\ErrorChecking.cs" />
+    <Compile Include="Response\Сheck\ResponseObject.cs" />
+    <Compile Include="Response\Сheck\Response.cs" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup />

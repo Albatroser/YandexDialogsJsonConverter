@@ -10,32 +10,32 @@ namespace YandexDialogsJsonConverterTest.Response
         public void СreateResponse()
         {
             // Arrang
-            YandexDialogsJsonConverter.Response.Response response = new YandexDialogsJsonConverter.Response.Response("Тест");
+            YandexDialogsJsonConverter.Response.ResponseObject response = new YandexDialogsJsonConverter.Response.ResponseObject("Тест");
             Session session = new Session("SessionID", 4, "UserID");
             // Act
-            ResponseObject ResponseObject = new ResponseObject(response, session);
+            YandexDialogsJsonConverter.Response.Response ResponseObject = new YandexDialogsJsonConverter.Response.Response(response, session);
             //// Assert
             Assert.AreEqual("SessionID", ResponseObject.Session.SessionId);
             Assert.AreEqual(4, ResponseObject.Session.MessageId);
             Assert.AreEqual("UserID", ResponseObject.Session.UserId);
             Assert.AreEqual("1.0", ResponseObject.Version);
-            Assert.AreEqual("Тест", ResponseObject.Response.Text);
+            Assert.AreEqual("Тест", ResponseObject.ResponseObject.Text);
         }
 
         [TestMethod]
         public void СreateResponse2()
         {
             // Arrang
-            YandexDialogsJsonConverter.Response.Response response = new YandexDialogsJsonConverter.Response.Response("Тест");
+            YandexDialogsJsonConverter.Response.ResponseObject response = new YandexDialogsJsonConverter.Response.ResponseObject("Тест");
             Session session = new Session("SessionID", 4, "UserID");
             // Act
-            ResponseObject ResponseObject = new ResponseObject(response, session, "2.0");
+            YandexDialogsJsonConverter.Response.Response ResponseObject = new YandexDialogsJsonConverter.Response.Response(response, session, "2.0");
             //// Assert
             Assert.AreEqual("SessionID", ResponseObject.Session.SessionId);
             Assert.AreEqual(4, ResponseObject.Session.MessageId);
             Assert.AreEqual("UserID", ResponseObject.Session.UserId);
             Assert.AreEqual("2.0", ResponseObject.Version);
-            Assert.AreEqual("Тест", ResponseObject.Response.Text);
+            Assert.AreEqual("Тест", ResponseObject.ResponseObject.Text);
         }
     }
 }

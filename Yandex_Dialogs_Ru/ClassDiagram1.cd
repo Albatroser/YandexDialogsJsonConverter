@@ -1,0 +1,377 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="YandexDialogsJsonConverter.Request.Session">
+    <Position X="19.75" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAACAAgAAAAAgIAAAAAQAEAAAAAAAAAAA=</HashCode>
+      <FileName>Request\Session.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="YandexDialogsJsonConverter.Request.Nlu">
+    <Position X="18.25" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAEAAAABAAA=</HashCode>
+      <FileName>Request\Nlu.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Entities" />
+    </ShowAsAssociation>
+  </Class>
+  <Struct Name="YandexDialogsJsonConverter.Response.ResponseObject">
+    <Position X="8.25" Y="2.5" Width="2" />
+    <Members>
+      <Field Name="buttons" Hidden="true" />
+      <Field Name="card" Hidden="true" />
+      <Field Name="endSession" Hidden="true" />
+      <Field Name="text" Hidden="true" />
+      <Field Name="tts" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AABAAAAAQAAggAAAIIAAAAAAAAQAAAAMAAAACAAAAAA=</HashCode>
+      <FileName>Response\ResponseObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Card" />
+      <Property Name="Buttons" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.Response">
+    <Position X="6" Y="0.5" Width="2" />
+    <Members>
+      <Field Name="response" Hidden="true" />
+      <Field Name="session" Hidden="true" />
+      <Field Name="version" Hidden="true" />
+    </Members>
+    <AssociationLine Name="ResponseObject" Type="YandexDialogsJsonConverter.Response.ResponseObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8" Y="1.724" />
+        <Point X="9.312" Y="1.724" />
+        <Point X="9.312" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Session" Type="YandexDialogsJsonConverter.Response.Session" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="1.75" />
+        <Point X="4.938" Y="1.75" />
+        <Point X="4.938" Y="2.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAGAAAAAAAQAAAAEAAAAAAAAAAAAAgAAAAAAAAAA=</HashCode>
+      <FileName>Response\Response.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="ResponseObject" />
+      <Property Name="Session" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.Session">
+    <Position X="3.5" Y="2.5" Width="2" />
+    <Members>
+      <Field Name="messageId" Hidden="true" />
+      <Field Name="sessionId" Hidden="true" />
+      <Field Name="userId" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAiAgAAAgIAAAAAAAEAAAABAAAAAA=</HashCode>
+      <FileName>Response\Session.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.Buttons">
+    <Position X="8.25" Y="5" Width="2" />
+    <Members>
+      <Field Name="hide" Hidden="true" />
+      <Field Name="payload" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+      <Field Name="url" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAQAAAAFAAEAAQABAAAAAIAAAACAAAAAAAAAA=</HashCode>
+      <FileName>Response\Buttons.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.BigImageCard">
+    <Position X="3" Y="8.25" Width="2" />
+    <Members>
+      <Field Name="button" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Field Name="imageId" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Button" Type="YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard" FixedToPoint="true">
+      <Path>
+        <Point X="3.75" Y="10.574" />
+        <Point X="3.75" Y="13.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAADAQAAgAEgAoAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\BigImageCard.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Button" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.169" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.ItemsCardList">
+    <Position X="8.5" Y="8.25" Width="2" />
+    <Members>
+      <Field Name="footer" Hidden="true" />
+      <Field Name="header" Hidden="true" />
+      <Field Name="items" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>BAAAAAQAAAAACAgAgAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\ItemsCardList.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Header" />
+      <Property Name="Items" />
+      <Property Name="Footer" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard">
+    <Position X="3.25" Y="13.25" Width="2" />
+    <Members>
+      <Field Name="payload" Hidden="true" />
+      <Field Name="text" Hidden="true" />
+      <Field Name="url" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAABAAgAAQAAAAAAAIAAAICAAACAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\CardBase\ButtonCard.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.CardBase.FooterCard">
+    <Position X="6" Y="10.75" Width="2" />
+    <Members>
+      <Field Name="button" Hidden="true" />
+      <Field Name="text" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Button" Type="YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="6" Y="11.469" />
+        <Point X="5.083" Y="11.469" />
+        <Point X="5.083" Y="13.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAABAAAAAAAAAgAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\CardBase\FooterCard.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Button" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.CardBase.HeaderCard">
+    <Position X="10.5" Y="10.75" Width="2" />
+    <Members>
+      <Field Name="text" Hidden="true" />
+    </Members>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAIAAAACAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\CardBase\HeaderCard.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Response.ImageCard.CardBase.CardItems">
+    <Position X="8.25" Y="10.75" Width="2" />
+    <Members>
+      <Field Name="button" Hidden="true" />
+      <Field Name="description" Hidden="true" />
+      <Field Name="imageId" Hidden="true" />
+      <Field Name="title" Hidden="true" />
+    </Members>
+    <AssociationLine Name="Button" Type="YandexDialogsJsonConverter.Response.ImageCard.CardBase.ButtonCard" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="8.375" Y="12.882" />
+        <Point X="8.375" Y="13.938" />
+        <Point X="5.25" Y="13.938" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AEAAAADAQAAgAEAAoAAAAAAAAAAAAAAAAAABAAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\CardBase\CardItems.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Button" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.Request">
+    <Position X="15.5" Y="0.5" Width="2" />
+    <AssociationLine Name="RequestObject" Type="YandexDialogsJsonConverter.Request.RequestObject" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.5" Y="2" />
+        <Point X="17.917" Y="2" />
+        <Point X="17.917" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Session" Type="YandexDialogsJsonConverter.Request.Session" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.5" Y="1.875" />
+        <Point X="20.083" Y="1.875" />
+        <Point X="20.083" Y="3.25" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>IAAAAAAAAAAAAQAAgAAAAAAAAAAAIIAAAAAAAAAAAAA=</HashCode>
+      <FileName>Request\RequestObject.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Meta" />
+      <Property Name="RequestObject" />
+      <Property Name="Session" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Infrastructure.Meta">
+    <Position X="14.5" Y="3.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAABAAAAAAAAAAAAAAEA=</HashCode>
+      <FileName>Infrastructure\Meta.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.RequestObject">
+    <Position X="17" Y="3.25" Width="2" />
+    <AssociationLine Name="Markup" Type="YandexDialogsJsonConverter.Request.Markup" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.604" Y="5.382" />
+        <Point X="17.604" Y="6.688" />
+        <Point X="17" Y="6.688" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAABAAAGAAAAAAAAQEAAQAAAAA=</HashCode>
+      <FileName>Request\Request.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Markup" />
+      <Property Name="Nlu" />
+    </ShowAsAssociation>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.Markup">
+    <Position X="15" Y="6.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAQAAAAAAAAA=</HashCode>
+      <FileName>Request\Markup.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.DATETIME" BaseTypeListCollapsed="true">
+    <Position X="14.5" Y="9.75" Width="2" />
+    <AssociationLine Name="Token" Type="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="15.125" Y="10.853" />
+        <Point X="15.125" Y="15.125" />
+        <Point X="18.25" Y="15.125" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAAABAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\DATETIME.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Value" />
+      <Property Name="Token" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.FIO" BaseTypeListCollapsed="true">
+    <Position X="17.25" Y="9.75" Width="2" />
+    <AssociationLine Name="Value" Type="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.FIO" FixedFromPoint="true">
+      <Path>
+        <Point X="18.666" Y="10.853" />
+        <Point X="18.666" Y="11.5" />
+      </Path>
+    </AssociationLine>
+    <AssociationLine Name="Token" Type="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="17.75" Y="10.853" />
+        <Point X="17.75" Y="14.5" />
+        <Point X="18.25" Y="14.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAAABAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\FIO.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Value" />
+      <Property Name="Token" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.GEO" BaseTypeListCollapsed="true">
+    <Position X="20" Y="9.75" Width="2" />
+    <AssociationLine Name="Token" Type="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens" FixedFromPoint="true" FixedToPoint="true">
+      <Path>
+        <Point X="20.667" Y="10.853" />
+        <Point X="20.667" Y="14.5" />
+        <Point X="20.25" Y="14.5" />
+      </Path>
+    </AssociationLine>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAAABAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\Geo.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Value" />
+      <Property Name="Token" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.NUMBER" BaseTypeListCollapsed="true">
+    <Position X="22.75" Y="9.75" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAgAAABAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\NUMBER.cs</FileName>
+    </TypeIdentifier>
+    <ShowAsAssociation>
+      <Property Name="Token" />
+    </ShowAsAssociation>
+    <Lollipop Position="0.2" />
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.Tokens">
+    <Position X="18.25" Y="14.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAACAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\EntitieInf\Tokens.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.DATETIME">
+    <Position X="15.5" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAJEAAABAACACAAAAAAAAAACIEAAAAAAAAABA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\StructAtom\DATETIME.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.FIO">
+    <Position X="18" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAEAAAAAAAABAAAAAABAAAAAAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\StructAtom\FIO.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Struct Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.StructAtom.GEO">
+    <Position X="21" Y="11.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAIIAAAAAAAAAAIAAAAAAAIAAAAAAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\StructAtom\GEO.cs</FileName>
+    </TypeIdentifier>
+  </Struct>
+  <Interface Name="YandexDialogsJsonConverter.Response.ImageCard.CardBase.ICard">
+    <Position X="6" Y="5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Response\ImageCard\CardBase\ICard.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="YandexDialogsJsonConverter.Request.NamedEntitiesYndex.EntitieInf.IEntitie">
+    <Position X="18.25" Y="8.25" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAA=</HashCode>
+      <FileName>Request\NamedEntitiesYndex\EntitieInf\Entities.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

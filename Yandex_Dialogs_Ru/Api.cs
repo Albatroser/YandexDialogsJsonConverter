@@ -10,7 +10,7 @@ namespace YandexDialogsJsonConverter
     public class Api
     {
         /// <summary>
-        /// Преоброзовать json запросе в RequestObject 
+        /// Преобразовать json запросе в RequestObject 
         /// </summary>
         /// <param name="value"></param>
         /// <returns></returns>
@@ -21,14 +21,33 @@ namespace YandexDialogsJsonConverter
         }
 
         /// <summary>
-        /// Преоброзовать ответа ResponseObject в json
+        /// Преобразовать ответа ResponseObject в json
         /// </summary>
-        /// <param name="value"></param>
+        /// <param name="value">Объект ответа, который необходимо конвертировать в json</param>
         /// <returns></returns>
-        public string SetResponse(Response.ResponseObject value)
+        public string SetResponse(Response.Response value)
         {
-            return Infrastructure.JsonConvert
-                .SerializeJSon<YandexDialogsJsonConverter.Response.ResponseObject>(value);
+            return Infrastructure.JsonConvert.SerializeJSon<YandexDialogsJsonConverter.Response.Response>(value);
+        }
+
+        /// <summary>
+        /// Проверить ResponseObject на соответствие требованиям яндекс.диалог и если соответствует, то преобразовать ответа в json
+        /// </summary>
+        /// <param name="value">Объект ответа, который необходимо конвертировать в json</param>
+        /// <param name="Errors">Список обнаруженных ошибок</param>
+        /// <returns></returns>
+        public string SetResponseCheck(Response.Response value, out Response.Сheck.Error[] Errors)
+        {
+            Response.Сheck.Response response = new Response.Сheck.Response(value);
+            Errors = response.QueueError.ToArray();
+
+            if (!response.Check)
+            {
+                string text = Infrastructure.JsonConvert.SerializeJSon<YandexDialogsJsonConverter.Response.Response>(value);
+                return text;
+            }
+
+            return null;
         }
     }
 }

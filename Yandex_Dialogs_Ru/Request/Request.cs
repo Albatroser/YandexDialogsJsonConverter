@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 namespace YandexDialogsJsonConverter.Request
 {
+    //RequestObject
     /// <summary>
     /// Данные, полученные от пользователя.
     /// </summary>

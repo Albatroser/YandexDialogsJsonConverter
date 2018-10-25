@@ -55,6 +55,19 @@
     <Compile Include="Response\ButtonsTest.cs" />
     <Compile Include="Response\ResponseTest.cs" />
     <Compile Include="Response\ResponseObjectTest.cs" />
+    <Compile Include="LoadTest.cs" />
+    <Compile Include="Сheck\ButtonsTest .cs" />
+    <Compile Include="Сheck\CardItemsTest.cs" />
+    <Compile Include="Сheck\TestString.cs" />
+    <Compile Include="Сheck\ErrorCheckingTest.cs" />
+    <Compile Include="Сheck\ButtonCardTest.cs" />
+    <Compile Include="Сheck\FooterCardTest.cs" />
+    <Compile Include="Сheck\HeaderCardTest.cs" />
+    <Compile Include="Сheck\ItemsCardListTest.cs" />
+    <Compile Include="Сheck\BigImageCardTest.cs" />
+    <Compile Include="Сheck\ResponseObjectTest.cs" />
+    <Compile Include="Сheck\SessionTest.cs" />
+    <Compile Include="Сheck\ResponseTest.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
